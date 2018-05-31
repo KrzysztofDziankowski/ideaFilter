@@ -1,0 +1,12 @@
+- question: What is profiling?
+  tags: [GENERAL]
+  category: GENERAL
+- question: What is differance between final, finally and finalize?
+  tags: [JAVA]
+  category: JAVA
+- question: What is the output of following code?
+  tags: [JAVA, CODE]
+  category: JAVA
+  code: |
+    for (int i=0; i<1; i++)
+      System.out.print(i);

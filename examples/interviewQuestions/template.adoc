@@ -1,0 +1,12 @@
+= Interview questions
+
+{% for item in data %}
+== {{ item.question }}
+
+{% if item.code %}
+----
+{{ item.code }}
+---- 
+{% endif %}
+Category: {{ item.category }}
+{% endfor %}

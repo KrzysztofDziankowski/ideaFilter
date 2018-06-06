@@ -20,7 +20,7 @@ In this project you canfind following technologies:
 
 Files used in the example:
 
-* YAML input file: link:examples/interviewQuestions/input.adoc[]
+* YAML input file: link:examples/interviewQuestions/input.yaml[]
 * Jinja2 template for AsciiDoc generation: link:examples/interviewQuestions/template.adoc.j2[]
 * Jinja2 template for AsciiDoc generation when grouping by category: link:examples/interviewQuestions/template_by_category.adoc.j2[]
 

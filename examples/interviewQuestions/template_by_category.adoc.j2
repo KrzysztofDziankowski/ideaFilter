@@ -1,0 +1,20 @@
+= Interview questions
+
+{% for categoryObjectItems in data %}
+{% for categoryObjectItem in categoryObjectItems %}
+{% if loop.first %}
+== Category: {{ categoryObjectItem }}
+{% else %}
+
+{% for questionObject in categoryObjectItem %}
+=== {{ questionObject.question }}
+
+{% if questionObject.code %}
+----
+{{ questionObject.code }}
+---- 
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endfor %}

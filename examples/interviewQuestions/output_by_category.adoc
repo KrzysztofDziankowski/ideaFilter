@@ -1,0 +1,17 @@
+= Interview questions
+
+== Category: GENERAL
+
+=== What is profiling?
+
+== Category: JAVA
+
+=== What is differance between final, finally and finalize?
+
+=== What is the output of following code?
+
+----
+for (int i=0; i<1; i++)
+  System.out.print(i);
+
+---- 

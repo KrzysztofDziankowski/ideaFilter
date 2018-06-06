@@ -1,0 +1,56 @@
+= ideaFilter
+
+Idea filter is a utility tool.
+It is used for filtering out ideas/notes/data gathrered in YAML file.
+Any "schema" can be used in YAML file. YAQL is used for filtering.
+Filtered out ideas are printed out in nice format based on Jinja2 template file.
+
+
+== Technologies
+
+In this project you canfind following technologies:
+
+* Python 3 - programming language of ideaFilter
+* YAML - format of input/output files
+* YAQL - queries for YAML
+* Jinja2 - templating liblary
+* AsciiDoc - used in exmples for generating output files based on template 
+
+== Examples
+
+Files used in the example:
+
+* YAML input file: link:examples/interviewQuestions/input.adoc[]
+* Jinja2 template for AsciiDoc generation: link:examples/interviewQuestions/template.adoc.j2[]
+* Jinja2 template for AsciiDoc generation when grouping by category: link:examples/interviewQuestions/template_by_category.adoc.j2[]
+
+
+.Read YAML input file and display full YAML without filtering them to std out
+----
+examples/interviewQuestions> ../../ideaFilter.py -i input.yaml
+----
+
+.Read YAML input file, filter them based on category and display YAML on std out
+----
+examples/interviewQuestions> ../../ideaFilter.py -i input.yaml -q '$.where($.category = JAVA)'
+----
+
+.Read YAML input file, filter them based on category and save output YAML to the file
+----
+examples/interviewQuestions> ../../ideaFilter.py -i input.yaml -q '$.where($.category = JAVA)' -o output.yaml
+----
+
+.Read YAML input file, filter them based on category, generate AsciiDoc based on template and save it to file
+----
+examples/interviewQuestions> ../../ideaFilter.py -i input.yaml -q '$.where($.category = JAVA)' -t template.adoc.j2 -o output.adoc
+----
+
+AsciiDoc output: link:examples/interviewQuestions/output.adoc[]
+
+.Read YAML input file, group entries by category, generate AsciiDoc based on template and save it to file
+----
+examples/interviewQuestions> ../../ideaFilter.py -i input.yaml -q '$.groupBy($.category)' -t template_by_category.adoc.j2 -o output_by_category.adoc
+----
+
+AsciiDoc output: link:examples/interviewQuestions/output_by_category.adoc[]
+
